@@ -36,7 +36,7 @@ static class Launcher
         var (subFolder, binaryName, majorGameVersion, minGameBuild) = gameVersion switch
         {
             GameVersion.Retail => ("_retail_", "Wow.exe", [10, 11, 12], 50401),
-            GameVersion.Classic => ("_classic_", "WowClassic.exe", [3, 4, 5], 50063),
+            GameVersion.Classic => ("_classic_", "WowClassic.exe", [2, 3, 4, 5], 50063),
             GameVersion.ClassicEra => ("_classic_era_", "WowClassic.exe", [1], 51001),
             GameVersion.ClassicAnniversary => ("_anniversary_", "WowClassic.exe", [2], 65340),
             GameVersion.ClassicTitan => ("_classic_titan_", "WowClassic.exe", new[] { 3 }, 64393),
