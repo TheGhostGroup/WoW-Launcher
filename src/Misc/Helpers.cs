@@ -27,9 +27,22 @@ static class Helpers
     public static (int Major, int Minor, int Revision, int Build) GetVersionValueFromClient(string fileName)
     {
         var fileVersionInfo = FileVersionInfo.GetVersionInfo(fileName);
+        var major = fileVersionInfo.FileMajorPart;
+        var minor = fileVersionInfo.FileMinorPart;
+        var build = fileVersionInfo.FileBuildPart;
+        var privatePart = fileVersionInfo.FilePrivatePart;
 
-        return (fileVersionInfo.FileMajorPart, fileVersionInfo.FileMinorPart,
-                fileVersionInfo.FileBuildPart, fileVersionInfo.FilePrivatePart);
+        // Special case for build numbers greater than 65535.
+        // Note: fileVersionInfo.FileVersion is an alternative based on string parsing.
+        if (build >= 6553 && privatePart < ushort.MaxValue)
+        {
+            privatePart = build * 10 + privatePart;
+            build = minor;
+            minor = major % 100;
+            major /= 100;
+        }
+
+        return (major, minor, build, privatePart);
     }
 
     public static void PrintHeader()

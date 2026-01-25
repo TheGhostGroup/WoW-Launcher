@@ -8,6 +8,6 @@ enum GameVersion
     Retail,
     Classic,
     ClassicEra,
+    ClassicAnniversary,
     ClassicTitan
 }
-

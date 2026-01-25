@@ -1,22 +1,48 @@
 # Arctium Game Launcher (Public version)
 A game launcher for World of Warcraft that allows you to connect to custom servers with a valid tls certificate attached.
 
-**NOTE**: This is a publicly available, stripped down version of the launcher. The **full-featured** launcher is distributed under different terms and is available at https://arctium.io
+**NOTE**: This is not the full-featured launcher. For mod loading, developer mode, extended tooling, and binary releases, use the official launcher at https://arctium.io
 
 ### License, Copyright & Contributions
 
 Please see our Open Source project [Documentation Repo](https://github.com/Arctium/Documentation)
 
+## Important Scope & Limitations
+
+This public launcher has a very strict and intentionally limited feature set.
+
+### What was removed
+- No developer mode
+- No Arctium server connection  
+  (Names remain unchanged by design)
+- No mod loading
+- No experimental or legacy features
+- No binary releases
+- No support for deprecated client branches
+
+If you need any of the above, please use the full-featured launcher
+
+### What This Launcher Can Do
+
+- Launch modern World of Warcraft clients
+- Connect to custom servers with a valid TLS certificate attached
+- Allow custom client version & cdn urls  
+  Useful for launching older clients or serving data from your own CDN
+
+## Supported Clients
+| Client Branch | Min Supported Version | Max Supported Version |
+|-------------------------|------------|------------|
+| Mainline                | 10.1.5     | **\*** |
+| Classic Era             | 1.14.4     | **\*** |
+| Classic                 | 3.4.2      | **\*** |
+| Classic Anniversary     | 2.5.5      | **\*** |
+| Classic Titan           | 3.80.0     | **\*** |
+
+**\* = all future versions in that branch (unless otherwise stated)**
+
 ## Special Request <3
 Please do NOT remove the name `arctium` from the final binary.
 Blizzard filters their crash logs based on localhost and the string `arctium` in the binary name. 
-
-### Supported Clients
-* 1.14.4 or later
-* 3.4.2 or later
-* 10.1.5 or later
-
-**Later = all future version in that branch.**
 
 ### NOTE FOR SERVER CONNECTIONS
 * A valid certificate matching your authentication/bnet server host name.
